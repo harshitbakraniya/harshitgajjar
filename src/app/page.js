@@ -13,7 +13,7 @@ export default function Home() {
         id="home"
         className="banner bg-background relative flex min-h-screen flex-col items-start justify-center px-6 pb-20 pt-28 sm:px-10 sm:pt-36 lg:px-16 lg:pt-40"
       >
-        <div className="flex w-full flex-col lg:flex-row lg:flex-wrap lg:items-center lg:justify-center gap-2 text-white sm:gap-4">
+        <div className="flex w-full flex-col xl:flex-row flex-wrap xl:items-center xl:justify-center gap-2 text-white sm:gap-4">
           <div className="text-2xl font-medium sm:text-3xl md:text-4xl">
             🤟 Hello, <br />
             I'm Harshit
@@ -21,7 +21,7 @@ export default function Home() {
           <div className="text-[clamp(3.5rem,18vw,14rem)] font-semibold leading-[0.9]">
             Frontend
           </div>
-          <div className="text-[clamp(3.5rem,18vw,14rem)] font-semibold leading-[0.9] lg:-ml-20">
+          <div className="text-[clamp(3.5rem,18vw,14rem)] font-semibold leading-[0.9] xl:-ml-20">
             Developer
           </div>
         </div>
@@ -33,10 +33,10 @@ export default function Home() {
           </p>
           <Link
             href="#about"
-            className="mt-10 inline-flex w-[110px] items-center gap-2 bg-gradient-to-r from-pink-500 to-pink-500 bg-[length:0%_2px] bg-[position:bottom_left] bg-no-repeat text-lg text-white no-underline transition-[background-size] duration-500 ease-in-out hover:bg-[length:100%_2px] sm:mt-16 lg:mt-20"
+            className="mt-10 inline-flex w-[140px] items-center font-medium gap-2 bg-gradient-to-r from-pink-500 to-pink-500 bg-[length:0%_2px] bg-[position:bottom_left] bg-no-repeat text-2xl text-white no-underline transition-[background-size] duration-500 ease-in-out hover:bg-[length:100%_2px] sm:mt-16 lg:mt-20"
           >
             About Me
-            <Arrow height={20} width={20} />
+            <span className="-rotate-90"><Arrow height={20} width={20} /></span>
           </Link>
         </div>
       </section>

@@ -55,7 +55,7 @@ function AccordionItem({ item }) {
         </span>
 
         <div className="relative z-10 flex w-full items-start sm:w-auto">
-          <p className="flex items-center gap-2 text-left text-lg font-semibold leading-[1.4] sm:text-xl lg:text-2xl lg:leading-[1.65]">
+          <p className="flex items-center gap-2 text-left sm:text-right xl:text-left text-lg font-semibold leading-[1.4] sm:text-xl lg:text-2xl lg:leading-[1.65]">
             {item.role}
             <span className="-rotate-90 shrink-0">
               <Arrow color="#111" width={24} height={24} />

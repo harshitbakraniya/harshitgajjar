@@ -42,12 +42,12 @@ function TalkToMe() {
   return (
     <section
       id="contact"
-      className="bg-background flex flex-col items-center justify-center px-6 sm:px-10 lg:px-16"
+      className="bg-background flex flex-col items-center justify-center px-6 sm:px-10 lg:px-16 overflow-x-hidden"
     >
       <Title text1="Talk to Me" text2="Talk to Me" />
       <form
         onSubmit={handleSubmit}
-        className="mx-auto w-full max-w-6xl py-16 text-left sm:py-24 lg:py-32"
+        className="mx-auto w-full max-w-6xl pb-10 text-left xl:pb-32"
       >
         <div className="flex w-full flex-col gap-6 sm:gap-8 lg:flex-row lg:gap-10">
           <div className="flex flex-1 flex-col">

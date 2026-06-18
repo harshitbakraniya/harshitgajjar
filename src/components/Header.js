@@ -3,7 +3,7 @@ import Link from "next/link";
 function Header() {
   return (
     <div className="absolute z-50 left-1/2 -translate-x-1/2 top-6 hidden w-full max-w-7xl items-center justify-between px-6 sm:top-10 sm:px-10 lg:flex lg:px-16">
-      <Link href="/#home" className="text-lg leading-none font-semibold text-white cursor-pointer">
+      <Link href="/#home" className="text-lg leading-none font-bold text-white cursor-pointer">
         Harshit <br />- Bakraniya
       </Link>
       <div className="flex items-center gap-4">

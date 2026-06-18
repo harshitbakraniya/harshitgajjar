@@ -92,7 +92,7 @@ function SelectedWork() {
   return (
     <section
       id="work"
-      className="bg-background flex flex-col items-center justify-center"
+      className="bg-background flex flex-col items-center justify-center overflow-x-hidden"
     >
       <Title text1="Selected Work" text2="Selected Work" />
       {isDesktop ? <DesktopStack /> : <MobileList />}

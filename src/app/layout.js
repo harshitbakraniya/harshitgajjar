@@ -13,14 +13,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       {/* Add a fallback class to avoid mismatches */}
       <body
-        className={`antialiased relative w-full overflow-x-hidden scroll-smooth`}
+        className={`antialiased relative w-full overflow-x-hidden scroll-smooth overflow-x-hidden`}
       >
         <Navigation />
-        <div className="relative">
-          <Header />
-          {children}
-          <Footer />
-        </div>
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   );

@@ -1,15 +1,15 @@
-'use client'
+"use client";
 
 import { motion } from "framer-motion";
 import Arrow from "@/svg/arrow";
-import { useMediaQuery } from 'react-responsive'
 
 function Title({ text1, text2 }) {
-    const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const arrowClass = "h-[50px] w-[50px] md:h-[100px] md:w-[100px]";
+
   return (
-    <div className="relative flex w-full overflow-hidden whitespace-nowrap bg-background py-12 sm:py-16 lg:py-24">
+    <div className="relative flex w-full overflow-hidden overflow-x-hidden whitespace-nowrap bg-background py-12 sm:py-16 lg:py-24">
       <motion.div
-        className="flex gap-8 sm:gap-12 lg:gap-20"
+        className="flex items-center gap-8 sm:gap-12 lg:gap-20"
         animate={{ x: ["0%", "-50%"] }}
         transition={{
           ease: "linear",
@@ -17,12 +17,18 @@ function Title({ text1, text2 }) {
           repeat: Infinity,
         }}
       >
-        <span className="text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-8xl">{text1}</span>
-        <Arrow width={isMobile ? 50 : 100} height={isMobile ? 50 : 100} />
-        <span className="text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-8xl">{text2}</span>
-        <Arrow width={isMobile ? 50 : 100} height={isMobile ? 50 : 100} />
-        <span className="text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-8xl">{text2}</span>
-        <Arrow width={isMobile ? 50 : 100} height={isMobile ? 50 : 100} />
+        <span className="text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-8xl">
+          {text1}
+        </span>
+        <Arrow className={arrowClass} />
+        <span className="text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-8xl">
+          {text2}
+        </span>
+        <Arrow className={arrowClass} />
+        <span className="text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-8xl">
+          {text2}
+        </span>
+        <Arrow className={arrowClass} />
       </motion.div>
     </div>
   );
