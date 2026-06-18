@@ -1,16 +1,7 @@
-import localFont from "next/font/local";
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 export const metadata = {
   title: "Create Next App",
@@ -20,10 +11,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      {/* Add a fallback class to avoid mismatches */}
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`antialiased relative w-full overflow-x-hidden scroll-smooth`}
       >
-        {children}
+        <Navigation />
+        <div className="relative">
+          <Header />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );

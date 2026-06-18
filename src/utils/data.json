@@ -1,0 +1,76 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Pariksharth",
+      "category": "Education",
+      "description": "An EdTech platform for students and institutes to conduct online and offline examinations. Built responsive student and admin portals with test management, OMR workflows, results, and analytics. Focused on performance, usability, and scalable UI development.",
+      "image": "/images/First.png",
+      "bg": "bg-[#01a0e2]",
+      "technologies": [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "MongoDB",
+        "PostgreSQL"
+      ],
+      "images": [
+        "/images/pariksharth/one.png",
+        "/images/pariksharth/two.png",
+        "/images/pariksharth/three.png",
+        "/images/pariksharth/four.png",
+        "/images/pariksharth/five.png"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Saleshandy",
+      "category": "SaaS",
+      "description": "A sales engagement platform for cold email outreach and lead generation. Contributed to frontend development, feature enhancements, API integrations, and UI improvements to support scalable business workflows.",
+      "image": "/images/Second.png",
+      "bg": "bg-[#275df5]",
+      "technologies": ["React.js", "Next.js", "TypeScript", "Tailwind CSS"],
+      "images": [
+        "/images/saleshandy/one.png",
+        "/images/saleshandy/two.png",
+        "/images/saleshandy/three.png",
+        "/images/saleshandy/four.png",
+        "/images/saleshandy/five.png"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Receiptflow",
+      "category": "SaaS",
+      "description": "A multi-tenant SaaS platform for document collection and management. Developed dashboards, document upload workflows, real-time status tracking, role-based access control, and advanced filtering features using Next.js and TypeScript.",
+      "image": "/images/Third.png",
+      "bg": "bg-[#002589]",
+      "technologies": ["React.js", "Next.js", "TypeScript", "Tailwind CSS"],
+      "images": [
+        "/images/receiptflow/one.png",
+        "/images/receiptflow/two.png",
+        "/images/receiptflow/three.png",
+        "/images/receiptflow/four.png",
+        "/images/receiptflow/five.png"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Mealbill",
+      "category": "Restaurant Management System(POS)",
+      "description": "A restaurant management and billing solution with POS, KDS, inventory management, and reporting modules. Built responsive interfaces to streamline restaurant operations and improve order processing efficiency.",
+      "image": "/images/Forth.png",
+      "bg": "bg-[#f1593c]",
+      "technologies": ["React.js", "Next.js", "TypeScript", "Tailwind CSS"],
+      "images": [
+        "/images/mealbill/one.png",
+        "/images/mealbill/two.png",
+        "/images/mealbill/three.png",
+        "/images/mealbill/four.png",
+        "/images/mealbill/five.png"
+      ]
+    }
+  ]
+}
