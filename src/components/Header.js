@@ -1,9 +1,27 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "motion/react";
+import { usePathname } from "next/navigation";
 
 function Header() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
+  // Home page header is rendered inside Hero
+  if (isHome) return null;
+
   return (
-    <div className="absolute z-50 left-1/2 -translate-x-1/2 top-6 hidden w-full max-w-7xl items-center justify-between px-6 sm:top-10 sm:px-10 lg:flex lg:px-16">
-      <Link href="/#home" className="text-lg leading-none font-bold text-white cursor-pointer">
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+      className="absolute left-0 right-0 top-6 z-50 mx-auto flex w-full max-w-7xl items-center justify-between px-6 sm:top-10 sm:px-10 lg:px-16"
+    >
+      <Link
+        href="/#home"
+        className="cursor-pointer text-lg font-bold leading-none text-white"
+      >
         Harshit <br />- Bakraniya
       </Link>
       <div className="flex items-center gap-4">
@@ -17,7 +35,7 @@ function Header() {
           LinkedIn
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

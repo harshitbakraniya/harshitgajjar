@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Reveal } from "@/components/motion/Reveal";
 
 const items = [
   {
@@ -86,24 +87,27 @@ function Skills() {
   return (
     <div className="bg-[#ffabdf] px-6 py-12 sm:px-10 sm:py-16 lg:p-20">
       <div className="mx-auto flex h-full max-w-6xl flex-col gap-8 sm:gap-10">
-        <h2 className="text-4xl font-medium leading-[1.2] sm:text-5xl md:text-6xl lg:text-7xl">
-          I'm good at..
-        </h2>
+        <Reveal>
+          <h2 className="text-4xl font-medium leading-[1.2] sm:text-5xl md:text-6xl lg:text-7xl">
+            I'm good at..
+          </h2>
+        </Reveal>
         <div className="flex w-full flex-1 flex-col justify-center overflow-hidden rounded-none bg-white">
           {items.map((item, i) => (
-            <motion.div
-              key={item.title}
-              animate={{
-                backgroundColor: openIndex === i ? "#fff" : "#ffabdf",
-              }}
-              transition={{ duration: 0.35, ease: "easeInOut" }}
-            >
-              <AccordionItem
-                item={item}
-                isOpen={openIndex === i}
-                onToggle={() => setOpenIndex(openIndex === i ? null : i)}
-              />
-            </motion.div>
+            <Reveal key={item.title} delay={i * 0.08}>
+              <motion.div
+                animate={{
+                  backgroundColor: openIndex === i ? "#fff" : "#ffabdf",
+                }}
+                transition={{ duration: 0.35, ease: "easeInOut" }}
+              >
+                <AccordionItem
+                  item={item}
+                  isOpen={openIndex === i}
+                  onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+                />
+              </motion.div>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Arrow from "@/svg/arrow";
+import { Reveal } from "@/components/motion/Reveal";
 
 const items = [
   {
@@ -73,21 +74,20 @@ function Experience() {
   return (
     <div className="bg-[#c2f1a5] px-6 py-12 sm:px-10 sm:py-16 lg:p-20">
       <div className="mx-auto flex h-full max-w-6xl flex-col gap-8 sm:gap-10">
-        <h2 className="text-4xl font-medium leading-[1.2] sm:text-5xl md:text-6xl lg:text-7xl">
-          Work experience..
-        </h2>
+        <Reveal>
+          <h2 className="text-4xl font-medium leading-[1.2] sm:text-5xl md:text-6xl lg:text-7xl">
+            Work experience..
+          </h2>
+        </Reveal>
         <div className="flex w-full flex-1 flex-col justify-center overflow-hidden rounded-none">
           {items.map((item, i) => (
-            <motion.div
-              key={item.role}
-              transition={{ duration: 0.35, ease: "easeInOut" }}
-            >
+            <Reveal key={item.role} delay={i * 0.08}>
               <AccordionItem
                 item={item}
                 isOpen={openIndex === i}
                 onToggle={() => setOpenIndex(openIndex === i ? null : i)}
               />
-            </motion.div>
+            </Reveal>
           ))}
         </div>
       </div>

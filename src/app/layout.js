@@ -11,10 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* Add a fallback class to avoid mismatches */}
-      <body
-        className={`antialiased relative w-full overflow-x-hidden scroll-smooth overflow-x-hidden`}
-      >
+      <body className="relative w-full scroll-smooth antialiased">
         <Navigation />
         <Header />
         {children}

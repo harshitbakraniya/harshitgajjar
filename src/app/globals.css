@@ -3,7 +3,14 @@
 @tailwind utilities;
 
 :root {
---background: #0f0f0f;
+  --background: #0f0f0f;
   --foreground: #171717;
   --btn-color: #f9f9f9;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }

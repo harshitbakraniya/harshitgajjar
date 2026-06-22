@@ -1,76 +1,78 @@
-'use client'
+"use client";
 
-import { motion, AnimatePresence } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const navItems = [
-  { name: 'Home', id: 'home' },
-  { name: 'Work', id: 'work' },
-  { name: 'About', id: 'about' },
-  { name: 'Contact', id: 'contact' },
-]
+  { name: "Home", id: "home" },
+  { name: "Work", id: "work" },
+  { name: "About", id: "about" },
+  { name: "Contact", id: "contact" },
+];
 
 function Navigation() {
-  const [activeSection, setActiveSection] = useState('home')
-  const [isScrolling, setIsScrolling] = useState(false)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState("home");
+  const [isScrolling, setIsScrolling] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolling(window.scrollY > 0)
+      setIsScrolling(window.scrollY > 0);
 
-      const sections = navItems.map((item) => item.id)
+      const sections = navItems.map((item) => item.id);
       for (const sectionId of sections) {
-        const element = document.getElementById(sectionId)
+        const element = document.getElementById(sectionId);
         if (element) {
-          const rect = element.getBoundingClientRect()
+          const rect = element.getBoundingClientRect();
           if (rect.top < window.innerHeight / 2) {
-            setActiveSection(sectionId)
+            setActiveSection(sectionId);
           }
         }
       }
-    }
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? 'hidden' : ''
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
     return () => {
-      document.body.style.overflow = ''
-    }
-  }, [isMenuOpen])
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
 
   const scrollToSection = (id) => {
-    const element = document.getElementById(id)
+    const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-    setIsMenuOpen(false)
-  }
+    setIsMenuOpen(false);
+  };
 
   return (
     <>
       {/* Mobile top bar */}
-      <div className="fixed top-6 left-6 z-50 text-sm leading-tight text-white sm:text-base lg:hidden">
-        Harshit
-        <br />- Bakraniya
-      </div>
+      <div className="fixed w-full top-6  z-50 flex items-center justify-between px-6 sm:px-10 lg:px-16">
+        <div className=" text-sm leading-tight text-white sm:text-base lg:hidden">
+          Harshit
+          <br />- Bakraniya
+        </div>
 
-      {/* Mobile menu button — top right */}
-      <button
-        type="button"
-        onClick={() => setIsMenuOpen(true)}
-        aria-label="Open menu"
-        className="fixed top-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-white/80 bg-white shadow-lg lg:hidden"
-      >
-        <span className="flex flex-col gap-1.5">
-          <span className="block h-0.5 w-5 bg-[#111]" />
-          <span className="block h-0.5 w-5 bg-[#111]" />
-          <span className="block h-0.5 w-5 bg-[#111]" />
-        </span>
-      </button>
+        {/* Mobile menu button — top right */}
+        <button
+          type="button"
+          onClick={() => setIsMenuOpen(true)}
+          aria-label="Open menu"
+          className="flex h-12 w-12 items-center justify-center rounded-full border border-white/80 bg-white shadow-lg lg:hidden"
+        >
+          <span className="flex flex-col gap-1.5">
+            <span className="block h-0.5 w-5 bg-[#111]" />
+            <span className="block h-0.5 w-5 bg-[#111]" />
+            <span className="block h-0.5 w-5 bg-[#111]" />
+          </span>
+        </button>
+      </div>
 
       {/* Mobile slide-in drawer */}
       <AnimatePresence>
@@ -85,10 +87,10 @@ function Navigation() {
               onClick={() => setIsMenuOpen(false)}
             />
             <motion.aside
-              initial={{ x: '100%' }}
+              initial={{ x: "100%" }}
               animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 28, stiffness: 280 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 28, stiffness: 280 }}
               className="fixed top-0 right-0 z-[70] flex h-full w-[min(320px,85vw)] flex-col bg-[#0f0f0f] px-8 py-10 lg:hidden"
             >
               <button
@@ -110,8 +112,8 @@ function Navigation() {
                     onClick={() => scrollToSection(item.id)}
                     className={`rounded-lg px-4 py-4 text-left text-2xl font-medium transition-colors ${
                       activeSection === item.id
-                        ? 'text-[#ffabdf]'
-                        : 'text-white/70 hover:text-white'
+                        ? "text-[#ffabdf]"
+                        : "text-white/70 hover:text-white"
                     }`}
                   >
                     {item.name}
@@ -142,8 +144,8 @@ function Navigation() {
 
       {/* Desktop bottom nav */}
       <motion.nav
-        initial={{ opacity: 0, y: 20, x: '-50%' }}
-        animate={{ opacity: 1, y: 0, x: '-50%' }}
+        initial={{ opacity: 0, y: 20, x: "-50%" }}
+        animate={{ opacity: 1, y: 0, x: "-50%" }}
         transition={{ duration: 0.8, delay: 0.2 }}
         className="fixed bottom-8 left-1/2 z-50 hidden lg:block"
       >
@@ -170,8 +172,8 @@ function Navigation() {
               <span
                 className={`transition-colors ${
                   activeSection === item.id
-                    ? 'font-semibold text-[#111]'
-                    : 'text-[#111]/70 hover:text-[#111]'
+                    ? "font-semibold text-[#111]"
+                    : "text-[#111]/70 hover:text-[#111]"
                 }`}
               >
                 {item.name}
@@ -181,7 +183,7 @@ function Navigation() {
         </motion.div>
       </motion.nav>
     </>
-  )
+  );
 }
 
-export default Navigation
+export default Navigation;
